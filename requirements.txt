@@ -1,0 +1,5 @@
+Flask==2.3.2
+ipython==8.12.0
+matplotlib==3.7.1
+numpy==1.24.2
+pygame==2.4.0

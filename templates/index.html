@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <button id="myButton">Send Data</button>
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('myButton').addEventListener('click', function() {
+            // The data you want to send to the server
+            var data = {key: "value"};
+
+            // Make a POST request to the server
+            fetch('/data', {
+                method: 'POST', 
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data) 
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                document.getElementById('response').textContent = data.message;
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
